@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="container-btn">
+    <!--<div class="btn-group" role="group">
+      <button (click)="onclick()" type="button" class="btn btn-danger">
+        {{Readmore?"Read More ": "Read Less" }}
+      </button>
+      @if (visible) {
+      <div class="bg-white shadow-sm p-3">
+        <h4>Hello world</h4>
+      </div>
+      }
+    </div>-->
+    <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{TypeActeur}}
+        </button>
+  
+        <!--<ul class="dropdown-menu">
+          @for (TypeActeur of TypeActeurList; track TypeActeur.acteurNom){
+          <li><a class="dropdown-item" >{{TypeActeur.typeActeurNom}}</a></li>
+          }
+        </ul>-->
+        <ul class="dropdown-menu ">
+            @for (TypeActeur of TypeActeurList; track TypeActeur.acteurNom){
+            <li class="list-group-item">
+                <a (click)="onclick0(TypeActeur)" class="dropdown-item" >
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+              <label class="form-check-label" for="firstCheckbox">{{TypeActeur.typeActeurNom}}</label>
+                </a>
+            </li>
+            }
+          </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        {{Acteur}}
+      </button>
+
+      <ul class="dropdown-menu">
+        @for (acteur of acteurList; track acteur.acteurNom){
+        <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
+        }
+      </ul>
+    
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Acteur}}
+        </button>
+  
+        <ul class="dropdown-menu">
+          @for (acteur of acteurList; track acteur.acteurNom){
+          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
+          }
+        </ul>
+      
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Acteur}}
+        </button>
+  
+        <ul class="dropdown-menu">
+          @for (acteur of acteurList; track acteur.acteurNom){
+          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
+          }
+        </ul>
+      
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Acteur}}
+        </button>
+  
+        <ul class="dropdown-menu">
+          @for (acteur of acteurList; track acteur.acteurNom){
+          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
+          }
+        </ul>
+      
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Acteur}}
+        </button>
+  
+        <ul class="dropdown-menu">
+          @for (acteur of acteurList; track acteur.acteurNom){
+          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
+          }
+        </ul>
+      
+      </div>
+  </div>
+</div>
