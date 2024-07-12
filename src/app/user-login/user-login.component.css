@@ -1,8 +1,9 @@
 .container{
     margin: auto;
+    margin-top: 160px;
     height: 350Px;
     padding: 10px;
-    margin-top: 180px;
+    
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none;

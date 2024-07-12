@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="container-btn">
+
+    <div class="button-row">
     <!--<div class="btn-group" role="group">
       <button (click)="onclick()" type="button" class="btn btn-danger">
         {{Readmore?"Read More ": "Read Less" }}
@@ -14,24 +15,18 @@
         <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           {{TypeActeur}}
         </button>
-  
-        <!--<ul class="dropdown-menu">
-          @for (TypeActeur of TypeActeurList; track TypeActeur.acteurNom){
-          <li><a class="dropdown-item" >{{TypeActeur.typeActeurNom}}</a></li>
-          }
-        </ul>-->
         <ul class="dropdown-menu ">
             @for (TypeActeur of TypeActeurList; track TypeActeur.acteurNom){
             <li class="list-group-item">
-                <a (click)="onclick0(TypeActeur)" class="dropdown-item" >
-              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                <a class="dropdown-item" >
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" (change)="toggleTypeActeurSelection(TypeActeur, $event)">
               <label class="form-check-label" for="firstCheckbox">{{TypeActeur.typeActeurNom}}</label>
                 </a>
             </li>
             }
           </ul>
     </div>
-    <div class="btn-group" role="group">
+    <!--<div class="btn-group" role="group">
       <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         {{Acteur}}
       </button>
@@ -41,55 +36,86 @@
         <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
         }
       </ul>
-    
+    -->
+    <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{PosteComptable}}
+        </button>
+        <ul class="dropdown-menu ">
+            @for (PosteComptable of PosteComptableList; track PosteComptable.postecomptableNom){
+            <li class="list-group-item">
+                <a class="dropdown-item" >
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" (change)="togglePosteComptableSelection(PosteComptable, $event)">
+              <label class="form-check-label" for="firstCheckbox">{{PosteComptable.posteComptableNom}}</label>
+                </a>
+            </li>
+            }
+          </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        {{TypeCSE}}
+      </button>
+      <ul class="dropdown-menu ">
+          @for (TypeCSE of TypeCSEList; track TypeCSE.acteurNom){
+          <li class="list-group-item">
+              <a class="dropdown-item" >
+            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" (change)="toggleTypeCSESelection(TypeCSE, $event)">
+            <label class="form-check-label" for="firstCheckbox">{{TypeCSE.typeCSENom}}</label>
+              </a>
+          </li>
+          }
+        </ul>
+    </div>
+    </div>
+
+    <div class="button-row">
+
+    <div class="btn-group" role="group">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Etat}}
+        </button>
+        <ul class="dropdown-menu ">
+            @for (etat of EtatList; track etat.etatNom){
+            <li class="list-group-item">
+                <a class="dropdown-item" >
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" (change)="toggleEtatSelection(etat, $event)">
+              <label class="form-check-label" for="firstCheckbox">{{etat.etatNom}}</label>
+                </a>
+            </li>
+            }
+          </ul>
     </div>
     <div class="btn-group" role="group">
         <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{Acteur}}
+          {{Annee}}
         </button>
-  
-        <ul class="dropdown-menu">
-          @for (acteur of acteurList; track acteur.acteurNom){
-          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
-          }
+        <ul class="dropdown-menu ">
+            @for (Annee of AnneeList; track Annee.anneeNum){
+            <li class="list-group-item">
+                <a class="dropdown-item" >
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" (change)="toggleAnneeSelection(Annee, $event)">
+              <label class="form-check-label" for="firstCheckbox">{{Annee.anneeNum}}</label>
+                </a>
+            </li>
+            }
         </ul>
-      
-      </div>
-      <div class="btn-group" role="group">
+    </div>
+    <div class="btn-group" role="group">
         <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{Acteur}}
+          {{Trimestre}}
         </button>
-  
-        <ul class="dropdown-menu">
-          @for (acteur of acteurList; track acteur.acteurNom){
-          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
-          }
-        </ul>
-      
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{Acteur}}
-        </button>
-  
-        <ul class="dropdown-menu">
-          @for (acteur of acteurList; track acteur.acteurNom){
-          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
-          }
-        </ul>
-      
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{Acteur}}
-        </button>
-  
-        <ul class="dropdown-menu">
-          @for (acteur of acteurList; track acteur.acteurNom){
-          <li><a (click)="onclick1(acteur)" class="dropdown-item" >{{acteur.acteurNom}}</a></li>
-          }
-        </ul>
-      
-      </div>
-  </div>
+        <ul class="dropdown-menu ">
+            @for (Trimestre of TrimestreList; track Trimestre.trimestreNum){
+            <li class="list-group-item">
+                <a class="dropdown-item" >
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" (change)="toggleTrimestreSelection(Trimestre, $event)">
+              <label class="form-check-label" for="firstCheckbox">{{Trimestre.trimestreNum}}</label>
+                </a>
+            </li>
+            }
+          </ul>
+    </div>
+    </div>
+
 </div>
